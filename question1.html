@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+    // function add() {
+    //     a = 5;
+    //     console.log("123");
+    // }
+    // add();
+    // console.log(a);
+    // function isSuShu(num) {
+    //     var flag = true;
+
+    //     for (var i = 2; i < num; i++) {
+    //         if (num % i === 0) {
+    //             flag = false; //不是质数
+    //         }
+    //     }
+    //     return flag;
+    // }
+
+
+    //    function num(i) {
+    //        var a = 2;
+    //        var n = 0;
+    //        while (n <= i) {
+    //            if (isSuShu(a)) {
+    //                n++;
+    //                if (n == i) {
+    //                	return a;
+    //                }
+    //            }
+    //            a++;
+    //        }
+    //    }
+
+    //    console.log(num(10));
+
+
+
+    // var name = "wage";
+    // var x = Object();
+    // x.name = "蛙哥";
+
+    // function abc() {
+    //     console.log(this.name);
+    //     return this;
+    // }
+    // var why = abc();
+    // console.log(why);
+
+    // abc.call(x);//蛙哥
+    // abc.call(this);//wage
+    // abc.call(abc());// wage wage 
+    // abc.call(abc.call(x));//蛙哥 wage
+
+    //有了return this
+    // abc.call(x); //蛙哥
+    // abc.call(this); //wage
+    // abc.call(abc()); // wage wage
+    // abc.call(abc.call(x)); // 蛙哥 蛙哥
+
+
+
+    var name = "wage";
+    var x = Object();
+    x.name = "蛙哥";
+
+    function abc() {
+        console.log(x.name);
+    }
+
+    
+    abc.call(x);//蛙哥
+    abc.call(this);//蛙哥
+    abc.call(abc());// 蛙哥 蛙哥 
+    abc.call(abc.call(x));//蛙哥 蛙哥
+
+    </script>
+</body>
+
+</html>
