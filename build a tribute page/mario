@@ -78,6 +78,7 @@
             </div>
             <h1 class="text-center">Mario & His Friends</h1>
         </div>
+        <br><br>
         <div class="row">
             <div class="col-md-4">
                 <div class="col-md-1"></div>
@@ -112,6 +113,7 @@
                 </div>
             </div>
         </div>
+        <br><br>
         <div class="row">
             <div class="col-md-12">
                 <div class="col-md-8" id="luigi-profile">
@@ -149,6 +151,7 @@
                 </div>
             </div>
         </div>
+        <br><br>
         <div class="row">
             <div class="col-md-12">
                 <div class="col-md-4">
@@ -167,6 +170,7 @@
                 <h3 class="col-md-4">Toad</h3>
             </div>
         </div>
+        <br><br>
         <div class="row">
             <h5 class="text-center"> <a href="https://en.wikipedia.org/wiki/Super_Mario" target="blank">More Info</a></h5>
             <h5 class="text-center">Designed by Cherie</h5>
