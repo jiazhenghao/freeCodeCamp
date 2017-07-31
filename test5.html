@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+    var name = "wage";
+    var x = Object();
+    x.name = "蛙哥";
+
+    function abc() {
+        console.log(this.name);
+    }
+
+    abc.call(x); //蛙哥
+    abc.call(this); //wage
+    abc.call(abc()); // wage wage 
+    abc.call(abc.call(x)); //蛙哥 wage
+    </script>
+</body>
+
+</html>
