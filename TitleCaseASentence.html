@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+    function titleCase(str) {
+        var arr = str.split(" ");
+        console.log(arr);
+        for (var i = 0; i < arr.length; i++) {
+            arr[i] = convertWord(arr[i]);
+        }
+        console.log(arr);
+        var resultStr = arr.join(" ");
+        return resultStr;
+    }
+
+    function convertWord(str) {
+        var newStr = str.toLowerCase();
+        var newStrBody = newStr.slice(1);
+        var newStrHead = newStr.slice(0, 1).toUpperCase();
+        return newStrHead.concat(newStrBody);
+    }
+
+    console.log(titleCase("I'm a little tea pot"));
+    </script>
+</body>
+
+</html>
