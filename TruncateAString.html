@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+    function truncateString(str, num) {
+        if (str.length <= 3) {
+            if (num >= str.length) {
+                return str;
+            } else {
+                return str.slice(0, num).concat("...");
+            }
+        } else {
+            if (num >= str.length) {
+                return str;
+            } else {
+                console.log(123);
+                if (num <= 3) {
+                    return str.slice(0, num).concat("...");
+                } else {
+                    return str.slice(0, num - 3).concat("...");
+                }
+
+            }
+        }
+    }
+
+    console.log(truncateString("Absolutely Longer", 2));
+    </script>
+</body>
+
+</html>
