@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+    function bouncer(arr) {
+        // Don't show a false ID to this bouncer.
+        var newArr = [];
+
+        newArr = arr.filter(function(currentValue) {
+        	console.log(currentValue == true);
+            return currentValue;
+        });
+
+        return newArr;
+    }
+    console.log(bouncer([false, null, 0, NaN, undefined, ""]));
+    console.log(bouncer([7, "ate", "", false, 9]));//should return [7, "ate", 9].
+    
+
+
+
+
+    </script>
+</body>
+
+</html>

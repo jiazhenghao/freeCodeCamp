@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+    function chunkArrayInGroups(arr, size) {
+        var newArr = [];//空数组，返回的数组
+        //二位数组
+        var i = 0;
+        var j = 0;
+        newArr[i] = [];
+
+        while (arr.length > 0) {
+            if (j < size) {
+                newArr[i].push(arr.shift());
+                j++;
+            } else {
+                i++;
+                newArr[i] = [];
+                j = 1;
+                newArr[i].push(arr.shift());
+            }
+        }
+        return newArr;
+    }
+
+    console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 2));
+    </script>
+</body>
+
+</html>
