@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+    function rot13(str) {
+        var newStr = "";
+        var temp = "";
+        for (var i = 0; i < str.length; i++) {
+            console.log(str.charCodeAt(i));
+            if (str.charCodeAt(i) >= 65 && str.charCodeAt(i) <= 90) {
+                if (str.charCodeAt(i) + 13 > 90) {
+                    temp = String.fromCharCode(str.charCodeAt(i) + 13 - 26);
+                } else {
+                    temp = String.fromCharCode(str.charCodeAt(i) + 13);
+                }
+            } else {
+                temp = str.charAt(i);
+            }
+            newStr += temp;
+        }
+        return newStr;
+    }
+
+    // Change the inputs below to test
+    console.log(rot13("SERR CVMMN!"));
+    </script>
+</body>
+
+</html>
