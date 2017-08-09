@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+    $(document).ready(function() {
+        $("#getMessage").on("click", function() {  
+            $.getJSON("/json/cats.json", function(json) {
+                var html = "";
+                // 过滤id不等于1的图片
+                json = json.filter(function(val) {
+                    return (val.id !== 1);
+                });
+                
+                json.forEach(function(val) {
+                    html += "<div class = 'cat'>"
+                    html += "<img src = '" + val.imageLink + "' " + "alt='" + val.altText + "'>"
+                    html += "</div>"
+                });
+                $(".message").html(html);
+            });
+        });
+    });
+    </script>
+</body>
+
+</html>
