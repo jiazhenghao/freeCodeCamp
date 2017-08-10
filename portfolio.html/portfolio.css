@@ -1,0 +1,72 @@
+body {
+    position: relative;
+    background-color: #999;
+}
+
+#nav {
+    padding-left: 70px;
+}
+
+#bs-example-navbar-collapse-1 {
+    padding-right: 70px;
+}
+
+#header {
+    background-image: url("../../images/header1.jpg");
+    background-repeat: no-repeat;
+    opacity: 0.9;
+    min-height: 900px;
+    width: 100%;
+    background-size: cover;
+}
+
+#header div {
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    text-align: center;
+}
+
+#header h1 {
+    margin-top: 150px;
+    color: white;
+    font-size: 70px;
+    font-weight: 700;
+}
+
+#header h2 {
+    margin-top: 40px;
+    margin-left: 350px;
+    color: white;
+}
+
+#about {
+    background-color: #999;
+}
+
+#about h3 {
+    color: white;
+    font-size: 40px;
+    font-family: 'EB Garamond', serif;
+    font-style: oblique;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+#about p {
+    font-size: 30px;
+    color: #f2f2f2;
+}
+
+#portfolio h1 {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 30px;
+    font-size: 70px;
+    font-weight: 700;
+}
+
+.carousel-caption {
+    font-size:50px;
+    top: 20px;
+}
