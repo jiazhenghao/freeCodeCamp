@@ -12,7 +12,12 @@
 <style>
 body {
     position: relative;
+    background-color: #999;
 }
+
+/*.container {
+    border:none;
+}*/
 
 #nav {
     padding-left: 70px;
@@ -21,6 +26,52 @@ body {
 #bs-example-navbar-collapse-1 {
     padding-right: 70px;
 }
+
+#header {
+    background-image: url("../../images/header1.jpg");
+    background-repeat: no-repeat;
+    opacity: 0.9;
+    min-height: 900px;
+    width: 100%;
+    background-size: cover;
+}
+
+#header div {
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    text-align: center;
+}
+
+#header h1 {
+    margin-top: 150px;
+    color: white;
+    font-size: 70px;
+    font-weight: 700;
+}
+
+#header h2 {
+    margin-top: 40px;
+    margin-left: 350px;
+    color: white;
+}
+#about {
+    background-color: #999;
+}
+
+#about h3{
+    font-size: 40px;
+    font-family: 'EB Garamond', serif;
+    font-style: oblique;
+    font-weight: 700;
+    letter-spacing: 1px;    
+}
+
+#about p {
+    font-size: 30px;
+    color: #f2f2f2;
+}
+
 
 </style>
 
@@ -38,7 +89,8 @@ body {
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right" role="tablist">
-                    <li class="btn btn-round"><a href="#php">About me</a></li>
+                    <li class="btn btn-round"><a href="#motto">Motto</a></li>
+                    <li class="btn btn-round"><a href="#about">About me</a></li>
                     <li class="btn btn-round"><a href="#js">Portfolio</a></li>
                     <li class="btn btn-round"><a href="#mgdb">Contact</a></li>
                 </ul>
@@ -46,41 +98,40 @@ body {
         </div>
     </nav>
     <div class="container well">
+        <div class="row">
+            <div class="col-md-12" id="header">
+                <div class="row" id="motto">
+                    <h1>Less Is More</h1>
+                    <h2>--- My Motto</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row" id="about">
+            <div class="col-lg-6 col-lg-offset-3">
+                <h3 class="centered">About me</h3>
+                <p class="centered">I'm a telecommunications engineer of China Mobile</p>
+                <p class="centered">And an ameatur designer.</p>
+                <p>My enthusiasm for programming is from the ideas of turning creative minds and products into eye-catching sites.</p>
+                <p>Do check me on<a href="http://twitter.com/BlackTie_co"> Twitter</a>
+                <p>I'm available for any topic related to developing work.</p>
+            </div>
+        </div>
+        <div></div>
         <div>
-        	<br><br><br><br>
+            <br>
+            <br>
+            <br>
+            <br>
             <h4 id="php">PHP</h4>
-            <p>PHP, an acronym for Hypertext Preprocessor, is a widely-used open source general-purpose scripting language. It is an HTML embedded scripting language and is especially suited for web development. The basic syntax of PHP is similar to C, Java, and Perl, and is easy to learn. PHP is used for creating interactive and dynamic web pages quickly, but you can do much more with PHP.
-            PHP, an acronym for Hypertext Preprocessor, is a widely-used open source general-purpose scripting language. It is an HTML embedded scripting language and is especially suited for web development. The basic syntax of PHP is similar to C, Java, and Perl, and is easy to learn. PHP is used for creating interactive and dynamic web pages quickly, but you can do much more with PHP.
-            PHP, an acronym for Hypertext Preprocessor, is a widely-used open source general-purpose scripting language. It is an HTML embedded scripting language and is especially suited for web development. The basic syntax of PHP is similar to C, Java, and Perl, and is easy to learn. PHP is used for creating interactive and dynamic web pages quickly, but you can do much more with PHP.
-            PHP, an acronym for Hypertext Preprocessor, is a widely-used open source general-purpose scripting language. It is an HTML embedded scripting language and is especially suited for web development. The basic syntax of PHP is similar to C, Java, and Perl, and is easy to learn. PHP is used for creating interactive and dynamic web pages quickly, but you can do much more with PHP.
-            PHP, an acronym for Hypertext Preprocessor, is a widely-used open source general-purpose scripting language. It is an HTML embedded scripting language and is especially suited for web development. The basic syntax of PHP is similar to C, Java, and Perl, and is easy to learn. PHP is used for creating interactive and dynamic web pages quickly, but you can do much more with PHP.
-            PHP, an acronym for Hypertext Preprocessor, is a widely-used open source general-purpose scripting language. It is an HTML embedded scripting language and is especially suited for web development. The basic syntax of PHP is similar to C, Java, and Perl, and is easy to learn. PHP is used for creating interactive and dynamic web pages quickly, but you can do much more with PHP.
-            PHP, an acronym for Hypertext Preprocessor, is a widely-used open source general-purpose scripting language. It is an HTML embedded scripting language and is especially suited for web development. The basic syntax of PHP is similar to C, Java, and Perl, and is easy to learn. PHP is used for creating interactive and dynamic web pages quickly, but you can do much more with PHP.
-            PHP, an acronym for Hypertext Preprocessor, is a widely-used open source general-purpose scripting language. It is an HTML embedded scripting language and is especially suited for web development. The basic syntax of PHP is similar to C, Java, and Perl, and is easy to learn. PHP is used for creating interactive and dynamic web pages quickly, but you can do much more with PHP.
-            PHP, an acronym for Hypertext Preprocessor, is a widely-used open source general-purpose scripting language. It is an HTML embedded scripting language and is especially suited for web development. The basic syntax of PHP is similar to C, Java, and Perl, and is easy to learn. PHP is used for creating interactive and dynamic web pages quickly, but you can do much more with PHP.
+            <p>PHP, an acronym for Hypertext Preprocessor, is a widely-used open source general-purpose scripting language. It is an HTML embedded scripting language and is especially suited for web development. The basic syntax of PHP is similar to C, Java, and Perl, and is easy to learn. PHP is used for creating interactive and dynamic web pages quickly, but you can do much more with PHP. PHP, an acronym for Hypertext Preprocessor, is a widely-used open source general-purpose scripting language. It is an HTML embedded scripting language and is especially suited for web development. The basic syntax of PHP is similar to C, Java, and Perl, and is easy to learn. PHP is used for creating interactive and dynamic web pages quickly, but you can do much more with PHP. PHP, an acronym for Hypertext Preprocessor, is a widely-used open source general-purpose scripting language. It is an HTML embedded scripting language and is especially suited for web development. The basic syntax of PHP is similar to C, Java, and Perl, and is easy to learn. PHP is used for creating interactive and dynamic web pages quickly, but you can do much more with PHP. PHP, an acronym for Hypertext Preprocessor, is a widely-used open source general-purpose scripting language. It is an HTML embedded scripting language and is especially suited for web development. The basic syntax of PHP is similar to C, Java, and Perl, and is easy to learn. PHP is used for creating interactive and dynamic web pages quickly, but you can do much more with PHP. PHP, an acronym for Hypertext Preprocessor, is a widely-used open source general-purpose scripting language. It is an HTML embedded scripting language and is especially suited for web development. The basic syntax of PHP is similar to C, Java, and Perl, and is easy to learn. PHP is used for creating interactive and dynamic web pages quickly, but you can do much more with PHP. PHP, an acronym for Hypertext Preprocessor, is a widely-used open source general-purpose scripting language. It is an HTML embedded scripting language and is especially suited for web development. The basic syntax of PHP is similar to C, Java, and Perl, and is easy to learn. PHP is used for creating interactive and dynamic web pages quickly, but you can do much more with PHP. PHP, an acronym for Hypertext Preprocessor, is a widely-used open source general-purpose scripting language. It is an HTML embedded scripting language and is especially suited for web development. The basic syntax of PHP is similar to C, Java, and Perl, and is easy to learn. PHP is used for creating interactive and dynamic web pages quickly, but you can do much more with PHP. PHP, an acronym for Hypertext Preprocessor, is a widely-used open source general-purpose scripting language. It is an HTML embedded scripting language and is especially suited for web development. The basic syntax of PHP is similar to C, Java, and Perl, and is easy to learn. PHP is used for creating interactive and dynamic web pages quickly, but you can do much more with PHP. PHP, an acronym for Hypertext Preprocessor, is a widely-used open source general-purpose scripting language. It is an HTML embedded scripting language and is especially suited for web development. The basic syntax of PHP is similar to C, Java, and Perl, and is easy to learn. PHP is used for creating interactive and dynamic web pages quickly, but you can do much more with PHP.
             </p>
             <h4 id="js">JS</h4>
             <p>
-                JavaScript is a cross-platform, object-oriented scripting language developed by Netscape. JavaScript was created by Netscape programmer Brendan Eich. It was first released under the name of LiveScript as part of Netscape Navigator 2.0 in September 1995. It was renamed JavaScript on December 4, 1995. As JavaScript works on the client side, It is mostly used for client-side web development.
-                PHP, an acronym for Hypertext Preprocessor, is a widely-used open source general-purpose scripting language. It is an HTML embedded scripting language and is especially suited for web development. The basic syntax of PHP is similar to C, Java, and Perl, and is easy to learn. PHP is used for creating interactive and dynamic web pages quickly, but you can do much more with PHP.
-                PHP, an acronym for Hypertext Preprocessor, is a widely-used open source general-purpose scripting language. It is an HTML embedded scripting language and is especially suited for web development. The basic syntax of PHP is similar to C, Java, and Perl, and is easy to learn. PHP is used for creating interactive and dynamic web pages quickly, but you can do much more with PHP.
-                PHP, an acronym for Hypertext Preprocessor, is a widely-used open source general-purpose scripting language. It is an HTML embedded scripting language and is especially suited for web development. The basic syntax of PHP is similar to C, Java, and Perl, and is easy to learn. PHP is used for creating interactive and dynamic web pages quickly, but you can do much more with PHP.
-                PHP, an acronym for Hypertext Preprocessor, is a widely-used open source general-purpose scripting language. It is an HTML embedded scripting language and is especially suited for web development. The basic syntax of PHP is similar to C, Java, and Perl, and is easy to learn. PHP is used for creating interactive and dynamic web pages quickly, but you can do much more with PHP.
-                PHP, an acronym for Hypertext Preprocessor, is a widely-used open source general-purpose scripting language. It is an HTML embedded scripting language and is especially suited for web development. The basic syntax of PHP is similar to C, Java, and Perl, and is easy to learn. PHP is used for creating interactive and dynamic web pages quickly, but you can do much more with PHP.
-                PHP, an acronym for Hypertext Preprocessor, is a widely-used open source general-purpose scripting language. It is an HTML embedded scripting language and is especially suited for web development. The basic syntax of PHP is similar to C, Java, and Perl, and is easy to learn. PHP is used for creating interactive and dynamic web pages quickly, but you can do much more with PHP.
-                PHP, an acronym for Hypertext Preprocessor, is a widely-used open source general-purpose scripting language. It is an HTML embedded scripting language and is especially suited for web development. The basic syntax of PHP is similar to C, Java, and Perl, and is easy to learn. PHP is used for creating interactive and dynamic web pages quickly, but you can do much more with PHP.
-                PHP, an acronym for Hypertext Preprocessor, is a widely-used open source general-purpose scripting language. It is an HTML embedded scripting language and is especially suited for web development. The basic syntax of PHP is similar to C, Java, and Perl, and is easy to learn. PHP is used for creating interactive and dynamic web pages quickly, but you can do much more with PHP.
+                JavaScript is a cross-platform, object-oriented scripting language developed by Netscape. JavaScript was created by Netscape programmer Brendan Eich. It was first released under the name of LiveScript as part of Netscape Navigator 2.0 in September 1995. It was renamed JavaScript on December 4, 1995. As JavaScript works on the client side, It is mostly used for client-side web development. PHP, an acronym for Hypertext Preprocessor, is a widely-used open source general-purpose scripting language. It is an HTML embedded scripting language and is especially suited for web development. The basic syntax of PHP is similar to C, Java, and Perl, and is easy to learn. PHP is used for creating interactive and dynamic web pages quickly, but you can do much more with PHP. PHP, an acronym for Hypertext Preprocessor, is a widely-used open source general-purpose scripting language. It is an HTML embedded scripting language and is especially suited for web development. The basic syntax of PHP is similar to C, Java, and Perl, and is easy to learn. PHP is used for creating interactive and dynamic web pages quickly, but you can do much more with PHP. PHP, an acronym for Hypertext Preprocessor, is a widely-used open source general-purpose scripting language. It is an HTML embedded scripting language and is especially suited for web development. The basic syntax of PHP is similar to C, Java, and Perl, and is easy to learn. PHP is used for creating interactive and dynamic web pages quickly, but you can do much more with PHP. PHP, an acronym for Hypertext Preprocessor, is a widely-used open source general-purpose scripting language. It is an HTML embedded scripting language and is especially suited for web development. The basic syntax of PHP is similar to C, Java, and Perl, and is easy to learn. PHP is used for creating interactive and dynamic web pages quickly, but you can do much more with PHP. PHP, an acronym for Hypertext Preprocessor, is a widely-used open source general-purpose scripting language. It is an HTML embedded scripting language and is especially suited for web development. The basic syntax of PHP is similar to C, Java, and Perl, and is easy to learn. PHP is used for creating interactive and dynamic web pages quickly, but you can do much more with PHP. PHP, an acronym for Hypertext Preprocessor, is a widely-used open source general-purpose scripting language. It is an HTML embedded scripting language and is especially suited for web development. The basic syntax of PHP is similar to C, Java, and Perl, and is easy to learn. PHP is used for creating interactive and dynamic web pages quickly, but you can do much more with PHP. PHP, an acronym for Hypertext Preprocessor, is a widely-used open source general-purpose scripting language. It is an HTML embedded scripting language and is especially suited for web development. The basic syntax of PHP is similar to C, Java, and Perl, and is easy to learn. PHP is used for creating interactive and dynamic web pages quickly, but you can do much more with PHP. PHP, an acronym for Hypertext Preprocessor, is a widely-used open source general-purpose scripting language. It is an HTML embedded scripting language and is especially suited for web development. The basic syntax of PHP is similar to C, Java, and Perl, and is easy to learn. PHP is used for creating interactive and dynamic web pages quickly, but you can do much more with PHP.
             </p>
             <h4 id="mysql">MySQL</h4>
             <p>
-                MySQL tutorial of w3cschool is a comprhensive tutorial to learn MySQL. We have hundreds of examples covered, often with PHP code. This helps you to learn how to create PHP-MySQL based web applications.
-                MySQL tutorial of w3cschool is a comprhensive tutorial to learn MySQL. We have hundreds of examples covered, often with PHP code. This helps you to learn how to create PHP-MySQL based web applications.
-                MySQL tutorial of w3cschool is a comprhensive tutorial to learn MySQL. We have hundreds of examples covered, often with PHP code. This helps you to learn how to create PHP-MySQL based web applications.
-                MySQL tutorial of w3cschool is a comprhensive tutorial to learn MySQL. We have hundreds of examples covered, often with PHP code. This helps you to learn how to create PHP-MySQL based web applications.
-                MySQL tutorial of w3cschool is a comprhensive tutorial to learn MySQL. We have hundreds of examples covered, often with PHP code. This helps you to learn how to create PHP-MySQL based web applications.
-                MySQL tutorial of w3cschool is a comprhensive tutorial to learn MySQL. We have hundreds of examples covered, often with PHP code. This helps you to learn how to create PHP-MySQL based web applications.
-                MySQL tutorial of w3cschool is a comprhensive tutorial to learn MySQL. We have hundreds of examples covered, often with PHP code. This helps you to learn how to create PHP-MySQL based web applications.
-                MySQL tutorial of w3cschool is a comprhensive tutorial to learn MySQL. We have hundreds of examples covered, often with PHP code. This helps you to learn how to create PHP-MySQL based web applications.
+                MySQL tutorial of w3cschool is a comprhensive tutorial to learn MySQL. We have hundreds of examples covered, often with PHP code. This helps you to learn how to create PHP-MySQL based web applications. MySQL tutorial of w3cschool is a comprhensive tutorial to learn MySQL. We have hundreds of examples covered, often with PHP code. This helps you to learn how to create PHP-MySQL based web applications. MySQL tutorial of w3cschool is a comprhensive tutorial to learn MySQL. We have hundreds of examples covered, often with PHP code. This helps you to learn how to create PHP-MySQL based web applications. MySQL tutorial of w3cschool is a comprhensive tutorial to learn MySQL. We have hundreds of examples covered, often with PHP code. This helps you to learn how to create PHP-MySQL based web applications. MySQL tutorial of w3cschool is a comprhensive tutorial to learn MySQL. We have hundreds of examples covered, often with PHP code. This helps you to learn how to create PHP-MySQL based web applications. MySQL tutorial of w3cschool is a comprhensive tutorial to learn MySQL. We have hundreds of examples covered, often with PHP code. This helps you to learn how to create PHP-MySQL based web applications. MySQL tutorial of w3cschool is a comprhensive tutorial to learn MySQL. We have hundreds of examples covered, often with PHP code. This helps you to learn how to create PHP-MySQL based web applications. MySQL tutorial of w3cschool is a comprhensive tutorial to learn MySQL. We have hundreds of examples covered, often with PHP code. This helps you to learn how to create PHP-MySQL based web applications.
             </p>
             <h4 id="pgsql">PostgreSQL</h4>
             <p>
