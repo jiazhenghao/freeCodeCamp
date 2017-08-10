@@ -5,8 +5,12 @@
     <meta charset="UTF-8">
     <title>Document</title>
     <link rel="stylesheet" href="../bootstrap-3.3.7-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="glyphicons/css/glyphicons.css">
+    <link rel="stylesheet" href="plugins/css/bootstrap-magnify.min.css">
+    <link rel="stylesheet" href="portfolio.css">
     <script src="../jquery/jquery-3.2.1.js"></script>
     <script src="../bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+    <script src="plugins/js/bootstrap-magnify.min.js"></script>
     <script src="portfolio.js"></script>
 </head>
 <style>
@@ -14,10 +18,6 @@ body {
     position: relative;
     background-color: #999;
 }
-
-/*.container {
-    border:none;
-}*/
 
 #nav {
     padding-left: 70px;
@@ -55,16 +55,18 @@ body {
     margin-left: 350px;
     color: white;
 }
+
 #about {
     background-color: #999;
 }
 
-#about h3{
+#about h3 {
+    color: white;
     font-size: 40px;
     font-family: 'EB Garamond', serif;
     font-style: oblique;
     font-weight: 700;
-    letter-spacing: 1px;    
+    letter-spacing: 1px;
 }
 
 #about p {
@@ -72,7 +74,13 @@ body {
     color: #f2f2f2;
 }
 
-
+#portfolio h1 {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 30px;
+    font-size: 70px;
+    font-weight: 700;
+}
 </style>
 
 <body>
@@ -91,8 +99,8 @@ body {
                 <ul class="nav navbar-nav navbar-right" role="tablist">
                     <li class="btn btn-round"><a href="#motto">Motto</a></li>
                     <li class="btn btn-round"><a href="#about">About me</a></li>
-                    <li class="btn btn-round"><a href="#js">Portfolio</a></li>
-                    <li class="btn btn-round"><a href="#mgdb">Contact</a></li>
+                    <li class="btn btn-round"><a href="#portfolio">Portfolio</a></li>
+                    <li class="btn btn-round"><a href="#contact">Contact</a></li>
                 </ul>
             </div>
         </div>
@@ -110,38 +118,73 @@ body {
             <div class="col-lg-6 col-lg-offset-3">
                 <h3 class="centered">About me</h3>
                 <p class="centered">I'm a telecommunications engineer of China Mobile</p>
-                <p class="centered">And an ameatur designer.</p>
+                <p class="centered">And an amateur designer.</p>
                 <p>My enthusiasm for programming is from the ideas of turning creative minds and products into eye-catching sites.</p>
-                <p>Do check me on<a href="http://twitter.com/BlackTie_co"> Twitter</a>
+                <p style="display: inline">Do check me on</p>
+                <div class="btn-group" role="group" aria-label="...">
+                    <a type="button" class="btn btn-default btn-lg" href="#" target="_blank"><span><i class="icon-twitter"></i></span></a>
+                    <a type="button" class="btn btn-default btn-lg" href="#" target="_blank"><span><i class="icon-facebook"></i></span></a>
+                    <a type="button" class="btn btn-default btn-lg" href="#" target="_blank"><span><i class="icon-instagram"></i></span></a>
+                </div>
                 <p>I'm available for any topic related to developing work.</p>
             </div>
         </div>
-        <div></div>
-        <div>
-            <br>
-            <br>
-            <br>
-            <br>
-            <h4 id="php">PHP</h4>
-            <p>PHP, an acronym for Hypertext Preprocessor, is a widely-used open source general-purpose scripting language. It is an HTML embedded scripting language and is especially suited for web development. The basic syntax of PHP is similar to C, Java, and Perl, and is easy to learn. PHP is used for creating interactive and dynamic web pages quickly, but you can do much more with PHP. PHP, an acronym for Hypertext Preprocessor, is a widely-used open source general-purpose scripting language. It is an HTML embedded scripting language and is especially suited for web development. The basic syntax of PHP is similar to C, Java, and Perl, and is easy to learn. PHP is used for creating interactive and dynamic web pages quickly, but you can do much more with PHP. PHP, an acronym for Hypertext Preprocessor, is a widely-used open source general-purpose scripting language. It is an HTML embedded scripting language and is especially suited for web development. The basic syntax of PHP is similar to C, Java, and Perl, and is easy to learn. PHP is used for creating interactive and dynamic web pages quickly, but you can do much more with PHP. PHP, an acronym for Hypertext Preprocessor, is a widely-used open source general-purpose scripting language. It is an HTML embedded scripting language and is especially suited for web development. The basic syntax of PHP is similar to C, Java, and Perl, and is easy to learn. PHP is used for creating interactive and dynamic web pages quickly, but you can do much more with PHP. PHP, an acronym for Hypertext Preprocessor, is a widely-used open source general-purpose scripting language. It is an HTML embedded scripting language and is especially suited for web development. The basic syntax of PHP is similar to C, Java, and Perl, and is easy to learn. PHP is used for creating interactive and dynamic web pages quickly, but you can do much more with PHP. PHP, an acronym for Hypertext Preprocessor, is a widely-used open source general-purpose scripting language. It is an HTML embedded scripting language and is especially suited for web development. The basic syntax of PHP is similar to C, Java, and Perl, and is easy to learn. PHP is used for creating interactive and dynamic web pages quickly, but you can do much more with PHP. PHP, an acronym for Hypertext Preprocessor, is a widely-used open source general-purpose scripting language. It is an HTML embedded scripting language and is especially suited for web development. The basic syntax of PHP is similar to C, Java, and Perl, and is easy to learn. PHP is used for creating interactive and dynamic web pages quickly, but you can do much more with PHP. PHP, an acronym for Hypertext Preprocessor, is a widely-used open source general-purpose scripting language. It is an HTML embedded scripting language and is especially suited for web development. The basic syntax of PHP is similar to C, Java, and Perl, and is easy to learn. PHP is used for creating interactive and dynamic web pages quickly, but you can do much more with PHP. PHP, an acronym for Hypertext Preprocessor, is a widely-used open source general-purpose scripting language. It is an HTML embedded scripting language and is especially suited for web development. The basic syntax of PHP is similar to C, Java, and Perl, and is easy to learn. PHP is used for creating interactive and dynamic web pages quickly, but you can do much more with PHP.
-            </p>
-            <h4 id="js">JS</h4>
-            <p>
-                JavaScript is a cross-platform, object-oriented scripting language developed by Netscape. JavaScript was created by Netscape programmer Brendan Eich. It was first released under the name of LiveScript as part of Netscape Navigator 2.0 in September 1995. It was renamed JavaScript on December 4, 1995. As JavaScript works on the client side, It is mostly used for client-side web development. PHP, an acronym for Hypertext Preprocessor, is a widely-used open source general-purpose scripting language. It is an HTML embedded scripting language and is especially suited for web development. The basic syntax of PHP is similar to C, Java, and Perl, and is easy to learn. PHP is used for creating interactive and dynamic web pages quickly, but you can do much more with PHP. PHP, an acronym for Hypertext Preprocessor, is a widely-used open source general-purpose scripting language. It is an HTML embedded scripting language and is especially suited for web development. The basic syntax of PHP is similar to C, Java, and Perl, and is easy to learn. PHP is used for creating interactive and dynamic web pages quickly, but you can do much more with PHP. PHP, an acronym for Hypertext Preprocessor, is a widely-used open source general-purpose scripting language. It is an HTML embedded scripting language and is especially suited for web development. The basic syntax of PHP is similar to C, Java, and Perl, and is easy to learn. PHP is used for creating interactive and dynamic web pages quickly, but you can do much more with PHP. PHP, an acronym for Hypertext Preprocessor, is a widely-used open source general-purpose scripting language. It is an HTML embedded scripting language and is especially suited for web development. The basic syntax of PHP is similar to C, Java, and Perl, and is easy to learn. PHP is used for creating interactive and dynamic web pages quickly, but you can do much more with PHP. PHP, an acronym for Hypertext Preprocessor, is a widely-used open source general-purpose scripting language. It is an HTML embedded scripting language and is especially suited for web development. The basic syntax of PHP is similar to C, Java, and Perl, and is easy to learn. PHP is used for creating interactive and dynamic web pages quickly, but you can do much more with PHP. PHP, an acronym for Hypertext Preprocessor, is a widely-used open source general-purpose scripting language. It is an HTML embedded scripting language and is especially suited for web development. The basic syntax of PHP is similar to C, Java, and Perl, and is easy to learn. PHP is used for creating interactive and dynamic web pages quickly, but you can do much more with PHP. PHP, an acronym for Hypertext Preprocessor, is a widely-used open source general-purpose scripting language. It is an HTML embedded scripting language and is especially suited for web development. The basic syntax of PHP is similar to C, Java, and Perl, and is easy to learn. PHP is used for creating interactive and dynamic web pages quickly, but you can do much more with PHP. PHP, an acronym for Hypertext Preprocessor, is a widely-used open source general-purpose scripting language. It is an HTML embedded scripting language and is especially suited for web development. The basic syntax of PHP is similar to C, Java, and Perl, and is easy to learn. PHP is used for creating interactive and dynamic web pages quickly, but you can do much more with PHP.
-            </p>
-            <h4 id="mysql">MySQL</h4>
-            <p>
-                MySQL tutorial of w3cschool is a comprhensive tutorial to learn MySQL. We have hundreds of examples covered, often with PHP code. This helps you to learn how to create PHP-MySQL based web applications. MySQL tutorial of w3cschool is a comprhensive tutorial to learn MySQL. We have hundreds of examples covered, often with PHP code. This helps you to learn how to create PHP-MySQL based web applications. MySQL tutorial of w3cschool is a comprhensive tutorial to learn MySQL. We have hundreds of examples covered, often with PHP code. This helps you to learn how to create PHP-MySQL based web applications. MySQL tutorial of w3cschool is a comprhensive tutorial to learn MySQL. We have hundreds of examples covered, often with PHP code. This helps you to learn how to create PHP-MySQL based web applications. MySQL tutorial of w3cschool is a comprhensive tutorial to learn MySQL. We have hundreds of examples covered, often with PHP code. This helps you to learn how to create PHP-MySQL based web applications. MySQL tutorial of w3cschool is a comprhensive tutorial to learn MySQL. We have hundreds of examples covered, often with PHP code. This helps you to learn how to create PHP-MySQL based web applications. MySQL tutorial of w3cschool is a comprhensive tutorial to learn MySQL. We have hundreds of examples covered, often with PHP code. This helps you to learn how to create PHP-MySQL based web applications. MySQL tutorial of w3cschool is a comprhensive tutorial to learn MySQL. We have hundreds of examples covered, often with PHP code. This helps you to learn how to create PHP-MySQL based web applications.
-            </p>
-            <h4 id="pgsql">PostgreSQL</h4>
-            <p>
-                In 1986 the Defense Advanced Research Projects Agency (DARPA), the Army Research Office (ARO), the National Science Foundation (NSF), and ESL, Inc sponsored Berkeley POSTGRES Project which was led by Michael Stonebrakessr. In 1987 the first demo version of the project is released. In June 1989, Version 1 was released to some external users. Version 2 and 3 were released in 1990 and 1991. Version 3 had support for multiple storage managers, an query executor was improved, rule system was rewritten. After that, POSTGRES has been started to be implemented in various research and development projects. For example, in late 1992, POSTGRES became the primary data manager for the Sequoia 2000 scientific computing project4. User community around the project also has been started increasing; by 1993, it was doubled.
-            </p>
-            <h4 id="mgdb">MongoDB</h4>
-            <p>
-                The term NoSQL was coined by Carlo Strozzi in the year 1998. He used this term to name his Open Source, Light Weight, DataBase which did not have an SQL interface.In the early 2009, when last.fm wanted to organize an event on open-source distributed databases, Eric Evans, a Rackspace employee, reused the term to refer databases which are non-relational, distributed, and does not conform to atomicity, consistency, isolation, durability - four obvious features of traditional relational database systems.</p>
-            <p>After reading the largest third party online MySQL tutorial by w3cschool, you will be able to install, manage and develop PHP-MySQL web applications by your own. We have a comprehensive, SQL TUTORIAL, which will help you to understand how to prepare queries to fetch data against various conditions.
-            </p>
+        <div class="row well" id="portfolio">
+            <div>
+                <h1>Some of my projects</h1>
+            </div>
+            <div class="row well">
+                <div class="col-lg-6"><img src="images/login.png" alt="login" class="img-responsive img-rounded"></div>
+                <div class="col-lg-6"><img src="images/index.png" alt="index" class="img-responsive img-rounded"></div>
+            </div>
+            <div class="row well">
+                <div class="col-lg-6"><img src="images/notFound.png" alt="notFound" class="img-responsive img-rounded"></div>
+                <div class="col-lg-6"><img src="images/notFound2.png" alt="notFound2" class="img-responsive img-rounded"></div>
+            </div>
+            <div class="row well">
+                <div class="col-lg-6"><img src="images/main.png" alt="main" class="img-responsive img-rounded"></div>
+                <div class="col-lg-6"><img src="images/yujing.png" alt="yujing" class="img-responsive img-rounded"></div>
+            </div>
+            <div class="row well">
+                <div class="col-lg-6"><img src="images/coding.png" alt="coding" class="img-responsive img-rounded"></div>
+                <div class="col-lg-6"><img src="images/coding2.png" alt="coding2" class="img-responsive img-rounded"></div>
+            </div>
+            <div class="row well">
+                <div class="col-lg-6"><img src="images/world.png" alt="world" class="img-responsive img-rounded"></div>
+                <div class="col-lg-6"><img src="images/rador.png" alt="rador" class="img-responsive img-rounded"></div>
+            </div>
+        </div>
+        <div class="row" id="contact">
+            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner" role="listbox">
+                    <div class="item active">
+                        <img src="..." alt="...">
+                        <div class="carousel-caption">
+                            ...
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="..." alt="...">
+                        <div class="carousel-caption">
+                            ...
+                        </div>
+                    </div>
+                    ...
+                </div>
+                <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
         </div>
     </div>
 </body>
