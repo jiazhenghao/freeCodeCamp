@@ -1,12 +1,9 @@
- $(document).ready(function(){
-	$('body').scrollspy({target: '.navbar-fixed-top'});
-	$('#portfolio img').magnify();
-	$("#send").click(function(e) {
-		e.preventDefault();
-		window.location.reload();//刷新当前页面.
-	});
-
-});
-
-
-
+ $(document).ready(function() {
+     $('body').scrollspy({ target: '.navbar-fixed-top' });
+     $('#portfolio img').magnify();
+     $("#send").click(function(e) {
+         e.preventDefault();
+         window.location.reload(); //刷新当前页面.
+     });
+     $("[href]").css("font-size", "20px");
+ });
