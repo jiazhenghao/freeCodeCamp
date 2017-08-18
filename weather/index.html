@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="../bootstrap-3.3.7-dist/css/bootstrap.css">
+    <script src="../jquery/jquery-3.2.1.js"></script>
+    <script src="../bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+    <style>
+    h1 {
+        text-align: center;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <h1>You're now in </h1>
+            <p></p>
+        </div>
+        
+    </div>
+    <div id="section">
+    </div>
+    <script>
+    function CelsiusToFahrenheit(num) {
+        return (9 * num / 5 + 32).toFixed(1);
+    }
+
+    function FahrenheitToCelsius(num) {
+        return ((num - 32) * 5 / 9).toFixed(1);
+    }
+
+    function getLocation(x) {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+        } 
+        else { 
+        	x.html("Geolocation is not supported by this browser."); 
+    	}
+    	console.log(x);
+        function showPosition(position) {
+            x.html("Latitude: " + position.coords.latitude +
+                "<br />Longitude: " + position.coords.longitude);
+        }
+    }
+
+    $(document).ready(function() {
+        $.ajax({
+            url: "https://fcc-weather-api.glitch.me/api/current?lat=31&lon=121",
+            dataType: "jsonp",
+            success: function(response) {
+                //console.log(response);
+                console.log(response.weather[0].main);
+                console.log(response.weather[0].description);
+                console.log(response.weather[0].icon);
+                getLocation($("p"));
+            }
+        });
+
+        
+    });
+    </script>
+</body>
+
+</html>
