@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Zeyada" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="bootstrap-3.3.7/css/bootstrap.css">
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.css">
+    <script src="jquery/jquery-3.2.1.js"></script>
+    <script src="bootstrap-3.3.7/js/bootstrap.js"></script>
+    <style>
+    body {
+        background-color: #77B1A9;
+    }
+
+    h2, p {
+        color: #77B1A9;
+    }
+
+    h1 {
+    	text-align:center;
+    	font-family: Zeyada, Oswald;
+    	font-size: 45px;
+    	padding-top: 35px;
+    	padding-bottom: 40px;
+    }
+
+    .float-top-right {
+        float: right;
+        margin: 0;
+        padding: 0;
+    }
+
+    .jumbotron {
+        background-color: white;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+        	<div class=""><h1>Random Quote by Zhenghao Jia</h1></div>
+            <div class="col-md-6 col-md-offset-3">
+                <button type="button" class="btn btn-default float-top-right" id="refresh">
+                    <span class="fa fa-lg fa-refresh"></span>
+                </button>
+                <div class="jumbotron">
+                    <h2>Keep your friends close, but your enemies closer.</h2>
+                    <p class="pull-right">- <span id="author">The Godfather II</span></p>
+                    <div style="clear:both"></div>
+                    <a type="button" class="btn btn-default" id="twitter" target="_blank" href="http://www.baidu.com">
+                        <span class="fa fa-lg fa-twitter-square"></span>
+                    </a>
+                    <a type="button" class="btn btn-default" id="facebook" target="_blank" href="http://www.baidu.com">
+                        <span class="fa fa-lg fa-facebook-square"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    $(document).ready(function() {
+        var colors = ['#387C44', '#4CC417', '#9DC209', '#F2BB66', '#e74c3c', '#EE9A4D', '#FB6964', '#342224', "#AF7817", "#BDBB99", "#77B1A9", "#73A857", "#307D7E", "#F87217", "#F70D1A", "#810541", "#4E387E"];
+
+        $("#refresh").on("click", function() {
+            getRandomQuote();
+        });
+
+        function getRandomQuote() {
+            $.ajax({
+                url: "https://api.forismatic.com/api/1.0/?",
+                dataType: "jsonp",
+                data: "method=getQuote&format=jsonp&lang=en&jsonp=?",
+                success: function(response) {
+                    console.log(response);
+                    var bgcolor = colors[Math.round(Math.random() * colors.length)];
+                    console.log(bgcolor);
+                    var author = "--- " + response.quoteAuthor;
+                    if (response.quoteAuthor == "") {
+                    	author = "No Author";
+                    }
+                    $("p").animate({
+                            opacity: 0
+                        }, 1000,
+                        function() {
+                            $(this).animate({
+                                opacity: 1
+                            }, 1000);
+                            $(this).text(author);
+                        });
+                    $("h2").animate({
+                            opacity: 0
+                        }, 1000,
+                        function() {
+                            $(this).animate({
+                                opacity: 1
+                            }, 1000);
+                            $(this).text(response.quoteText);
+                        });
+                    $("body").animate({
+                            opacity: 0
+                        }, 1000,
+                        function() {
+                            $(this).animate({
+                                opacity: 1
+                            }, 1000);
+                            $(this).css("backgroundColor", bgcolor);
+                        });
+                    $("h2").animate({
+                            opacity: 0
+                        }, 1000,
+                        function() {
+                            $(this).animate({
+                                opacity: 1
+                            }, 1000);
+                            $(this).css("color", bgcolor);
+                        });
+                    $("p").animate({
+                            opacity: 0
+                        }, 1000,
+                        function() {
+                            $(this).animate({
+                                opacity: 1
+                            }, 1000);
+                            $(this).css("color", bgcolor);
+                        });
+                }
+            });
+        }
+    });
+    </script>
+</body>
+
+</html>
