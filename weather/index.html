@@ -8,19 +8,38 @@
     <script src="../jquery/jquery-3.2.1.js"></script>
     <script src="../bootstrap-3.3.7-dist/js/bootstrap.js"></script>
     <style>
-    h1 {
-        text-align: center;
-    }
+
     </style>
 </head>
 
 <body>
     <div class="container">
         <div class="row">
-            <h1>You're now in </h1>
-            <p></p>
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <td>You're now in </td>
+                        <td id="area"></td>
+                    </tr>
+                    <tr>
+                        <td>Your tempature is </td>
+                        <td id="tempature"></td>
+                    </tr>
+                    <tr>
+                        <td>Your weather condition is</td>
+                        <td id="main"></td>
+                    </tr>
+                    <tr>
+                        <td>Sunrise</td>
+                        <td id="sunrise"></td>
+                    </tr>
+                    <tr>
+                        <td>Sunset</td>
+                        <td id="sunset"></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-        
     </div>
     <div id="section">
     </div>
@@ -33,34 +52,86 @@
         return ((num - 32) * 5 / 9).toFixed(1);
     }
 
-    function getLocation(x) {
+    var longitude = undefined;
+    var latitude = undefined;
+
+
+    Date.prototype.format = function(format) {
+        var date = {
+            "M+": this.getMonth() + 1,
+            "d+": this.getDate(),
+            "h+": this.getHours(),
+            "m+": this.getMinutes(),
+            "s+": this.getSeconds(),
+            "q+": Math.floor((this.getMonth() + 3) / 3),
+            "S+": this.getMilliseconds()
+        };
+        if (/(y+)/i.test(format)) {
+            format = format.replace(RegExp.$1, (this.getFullYear() + '').substr(4 - RegExp.$1.length));
+        }
+        for (var k in date) {
+            if (new RegExp("(" + k + ")").test(format)) {
+                format = format.replace(RegExp.$1, RegExp.$1.length == 1 ?
+                    date[k] : ("00" + date[k]).substr(("" + date[k]).length));
+            }
+        }
+        return format;
+    }
+    
+
+    function getLocation() {
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(showPosition);
-        } 
-        else { 
-        	x.html("Geolocation is not supported by this browser."); 
-    	}
-    	console.log(x);
+        } else {
+            console.log("Geolocation is not supported by this browser.");
+        }
         function showPosition(position) {
-            x.html("Latitude: " + position.coords.latitude +
-                "<br />Longitude: " + position.coords.longitude);
+            longitude = position.coords.longitude;
+            latitude = position.coords.latitude;
+            $.ajax({
+                url: "https://fcc-weather-api.glitch.me/api/current?",
+                data: "lat=" + latitude + "&lon=" + longitude,
+                dataType: "jsonp",
+                success: function(response) {
+                    console.log(response.weather[0].icon);
+                    $("#main").text(response.weather[0].main);
+                    $("#area").text(response.name + " , " + response.sys.country);
+                    var img = "d1.png"
+                    $("#tempature").html("<span id='btn1'>" + response.main.temp.toFixed(1) + "</span> " + "<button>&#8451</button>"+"<img src='"+img+ "'>");
+                    // 将当前时间换成时间格式字符串
+                    var timestamp1 = response.sys.sunrise;
+                    var newDate = new Date();
+                    newDate.setTime(timestamp1 * 1000);
+                    $("#sunrise").text(newDate.format('yyyy-MM-dd h:m:s'));
+                    var timestamp2 = response.sys.sunset;
+                    newDate.setTime(timestamp2 * 1000);
+                    $("#sunset").text(newDate.format('yyyy-MM-dd h:m:s')); 
+
+                    console.log(longitude);
+                    console.log(latitude);
+                    var init = 1;
+                    $("button").on('click', function() {
+                        if (init == 1) {
+                            init = 0;
+                            var num = $("#btn1").text();
+                            console.log(num);
+                            $("#btn1").text(CelsiusToFahrenheit(num));
+                            $(this).html("&deg;F");
+                        } else {
+                            init = 1;
+                            var num = $("#btn1").text();
+                            console.log(num);
+                            $("#btn1").text(FahrenheitToCelsius(num));
+                            $(this).html("&#8451");
+                        }
+                    });
+                }
+            });
         }
     }
 
     $(document).ready(function() {
-        $.ajax({
-            url: "https://fcc-weather-api.glitch.me/api/current?lat=31&lon=121",
-            dataType: "jsonp",
-            success: function(response) {
-                //console.log(response);
-                console.log(response.weather[0].main);
-                console.log(response.weather[0].description);
-                console.log(response.weather[0].icon);
-                getLocation($("p"));
-            }
-        });
-
-        
+        getLocation();
     });
     </script>
 </body>
