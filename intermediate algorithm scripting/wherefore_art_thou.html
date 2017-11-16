@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+    function whatIsInAName(collection, source) {
+        // What's in a name?
+        var arr = [];
+        var objTemp = {};
+        var arrTemp = [];
+        // Only change code below this line
+        for (var i = 0; i < collection.length; i++) {
+        	objTemp = collection[i];
+        	console.log(objTemp);
+        	arrTemp = Object.keys(source);
+        	console.log(arrTemp);
+        	var isArr = true;
+        	for (var j = 0; j < arrTemp.length; j++) {
+        		if (objTemp.hasOwnProperty(arrTemp[j])) {
+        			if(objTemp[arrTemp[j]] == source[arrTemp[j]]) {
+        				isArr = true;
+        				continue;
+        			}
+        		}
+        		isArr = false;
+        		break;
+        	}
+        	if (isArr) {
+        		arr.push(objTemp);
+        	}
+        }
+        console.log(arr);
+        // Only change code above this line
+        return arr;
+    }
+
+    whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" });
+
+    </script>
+</body>
+
+</html>
