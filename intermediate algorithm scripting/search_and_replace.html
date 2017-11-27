@@ -1,12 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<title>Document</title>
+    <meta charset="UTF-8">
+    <title>Document</title>
 </head>
+
 <body>
-	<script>
-		
-	</script>
+    <script>
+    function myReplace(str, before, after) {
+    	after = firstCaseConvert(before, after);
+    	//var newString = 'abc12345#$*%'.replace(/([^\d]*)(\d*)([^\w]*)/, replacer);
+    	return str.replace(before, after);
+        //return str;
+    }
+
+    function firstCaseConvert(before, after) {
+    	var array1 = before.split("");
+    	var array2 = after.split("");
+    	//console.log(array1);
+    	//console.log(array2);
+    	if (array1[0] === array1[0].toUpperCase()) {
+    		array2[0] = array2[0].toUpperCase();
+    	}
+    	else {
+    		array2[0] = array2[0].toLowerCase();
+    	}
+    	return array2.join("");
+    }
+
+ //   	console.log(firstCaseConvert("ap","ds"));
+ //   	console.log(firstCaseConvert("cp","Ds"));
+	// console.log(firstCaseConvert("Wp","Ds"));
+	// console.log(firstCaseConvert("Wp","ds"));
+    //myReplace("A quick brown fox jumped over the lazy dog", "jumped", "leaped");
+    console.log(myReplace("A quick brown fox jumped over the lazy dog", "jumped", "leaped"));
+
+
+
+    </script>
 </body>
+
 </html>
