@@ -9,27 +9,32 @@
 <body>
     <script>
     function sumPrimes(num) {
-
-
-        return num;
-    
-
+    	if (num < 2) {
+    		return false;
+    	}
+    	var sum = 0;
+    	for (var i = 2; i <= num; i++) {
+    		if (isPrime(i)) {
+    			sum += i;
+    		}
+    	}
+        return sum;
     }
 
     function isPrime(num) {
-    	return Math.ceil(Math.sqrt(num));
-    	// for (var i = 0; i < Math.ceil(Math.sqrt(num)); i++) {
-    		
-    	// }
+    	if (num == 2) {
+    		return true;
+    	}
+    	for (var i = 2; i <= Math.ceil(Math.sqrt(num)); i++) {
+    		if (num % i == 0) {
+    			return false;
+    		}
+    	}
+    	return true;
     }
-
-    console.log(isPrime(121));
-	console.log(isPrime(120));
-	console.log(isPrime(119));
-	console.log(isPrime(118));
-	console.log(isPrime(110));
-	console.log(isPrime(101));
-    console.log(isPrime(100));
+ 	
+	console.log(sumPrimes(977));
+	console.log(sumPrimes(10));
 
     </script>
 </body>
