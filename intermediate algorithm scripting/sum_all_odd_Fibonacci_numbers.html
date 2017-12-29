@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+    function sumFibs(num) {
+        var sum = 0;
+        if (num == 1) {
+            return 1;
+        }
+        var arr = [1, 1];
+        var tmp1 = 1;
+        var tmp2 = 1;
+        var tmp3 = tmp1 + tmp2;
+        sum = tmp1 + tmp2;
+        while (tmp3 <= num) {
+            if (tmp3 % 2 == 1) {
+                sum += tmp3;
+            }
+            arr.push(tmp3);
+            tmp3 = arr[arr.length - 1] + arr[arr.length - 2];
+        }
+        //console.log(arr);
+        return sum;
+    }
+    console.log(sumFibs(1));
+    console.log(sumFibs(4));
+    console.log(sumFibs(1000));
+    console.log(sumFibs(75024));
+    console.log(sumFibs(75025));
+    console.log(sumFibs(4000000));
+    </script>
+</body>
+
+</html>

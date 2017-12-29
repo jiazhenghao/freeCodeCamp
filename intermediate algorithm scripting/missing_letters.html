@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+    function fearNotLetter(str) {
+
+    	var strSequence = "";
+    	for (var i = str.charCodeAt(0); i <= str.charCodeAt(str.length - 1); i++) {
+    		strSequence += String.fromCharCode(i);	
+    	}
+    	//console.log(strSequence);
+    	var strResult = "";
+    	for (var j = 0; j < strSequence.length; j++) {
+    		//console.log("123");
+    		if (str.indexOf(strSequence.charAt(j) + "") == -1) {
+    			strResult += strSequence.charAt(j);
+    		}
+    		//console.log(str.charAt(j));
+    		//console.log(strSequence.indexOf(str.charAt(j)));
+    		//console.log(strSequence.indexOf(str.charAt(j) + ""));
+    	}
+    	if (strResult === "") {
+    		return undefined;
+    	}
+    	else {
+    		return strResult;
+    	}
+    	
+    }
+
+    console.log(fearNotLetter("abce"));//d
+    console.log(fearNotLetter("abcdefghjklmno"));//i
+    console.log(fearNotLetter("bcd"));//undefined
+    console.log(fearNotLetter("yz"));//undefined
+
+    </script>
+</body>
+
+</html>

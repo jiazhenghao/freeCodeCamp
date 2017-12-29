@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+    function spinalCase(str) {
+    	//首字母小写
+        str = (str.charAt(0) + "").toLowerCase() + str.slice(1);
+
+        var arr = str.split(new RegExp(/[_-\s]/));
+        var temp = "";
+        var arr2 = [];
+        var strResult = "";
+        for (var i = 0; i < arr.length; i++) {
+        	//首字母小写
+        	arr[i] = (arr[i].charAt(0) + "").toLowerCase() + arr[i].slice(1);
+            arr2 = arr[i].split("");
+            for (var j = 0; j < arr2.length; j++) {
+                if (arr2[j].match(/[A-Z]/)) {
+                    strResult += "-" + arr2[j].toLowerCase();
+                }
+                else {
+                	strResult += arr2[j];
+                }
+            }
+            if (i != (arr.length - 1)) {
+            	strResult += "-";
+            }
+            
+            //console.log(arr2);
+        }
+
+        return strResult;
+    }
+
+    console.log(spinalCase('This Is Spinal Tap'));
+    console.log(spinalCase("thisIsSpinalTap"));
+    console.log(spinalCase("The_Andy_Griffith_Show"));
+    console.log(spinalCase("Teletubbies say Eh-oh"));
+    console.log(spinalCase("AllThe-small Things"));
+    </script>
+</body>
+
+</html>

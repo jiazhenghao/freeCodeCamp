@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+    function convertHTML(str) {
+        var strResult = str;
+        var arr1 = ["&","<",">",'"',"'"];
+        var arr2 = ["&amp;","&lt;","&gt;","&quot;","&apos;"];
+        for (var i = 0; i < arr1.length; i++) {
+        	strResult = strResult.replace(new RegExp(arr1[i],"gm"), arr2[i]);  	
+        }
+        return strResult;
+    }
+
+    console.log(convertHTML("Dolce & Gabbana"));
+    console.log(convertHTML("Hamburgers < Pizza < Tacos"));
+    console.log(convertHTML("Sixty > twelve"));
+    console.log(convertHTML('Stuff in "quotation marks"'));
+    console.log(convertHTML("Shindler's List"));
+    console.log(convertHTML("<>"));
+    console.log(convertHTML("abc"));
+    </script>
+</body>
+
+</html>
