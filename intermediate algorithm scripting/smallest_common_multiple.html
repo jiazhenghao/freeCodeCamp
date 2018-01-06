@@ -11,22 +11,57 @@
     function smallestCommons(arr) {
         var big = Math.max(arr[0], arr[arr.length - 1]);
         var small = Math.min(arr[0], arr[arr.length -1]);
-        console.log(big + " " + small);
-        
-        for (var i = big; i <= big; i++) {
-        	
-
-
-
+        //console.log(big + " " + small);
+        var num = small;
+        for (var i = small; i <= big; i++) {
+        	if (num % i == 0) {
+        		continue;
+        	}
+        	//迭代一个取2个数的最小公倍数的函数
+        	num = smallestCommonsBetweenTwoNumbers(num, i);
+        	//console.log(num);
         }
-
+        return num;
     }
 
+    function smallestCommonsBetweenTwoNumbers(num, small) {
+    	var arr = commondivisor(num, small);
+    	var result = num * small;
+    	for (var item in arr) {
+    		result /= arr[item];
+    	}
+    	return result;
+    }
 
-    smallestCommons([1, 5]);
-    smallestCommons([5, 1]);
-    smallestCommons([1, 13]);
-    smallestCommons([23, 18]);
+    function commondivisor(num1, num2) {
+    	var arr = [];
+    	for (var i = 2; i <= Math.min(num1,num2); i++) {
+    		if (num1 % i == 0 & num2 % i == 0) {
+    			num1 /= i;
+    			num2 /= i;
+    			
+    			arr.push(i);
+    			i = 1;
+    		}
+    		//console.log(i);
+    	}
+    	return arr;
+    }
+
+    //console.log(smallestCommonsBetweenTwoNumbers(420, 8));
+    //console.log(commondivisor(420,8));
+    //console.log(commondivisor(45, 24));
+    //console.log(commondivisor(100, 10));
+    //console.log(commondivisor(96, 150));
+    console.log(smallestCommons([1, 5]));
+    console.log(smallestCommons([5, 1]));
+    console.log(smallestCommons([1, 12]));
+    console.log(smallestCommons([1, 13]));
+    console.log(smallestCommons([23, 18]));
+    // smallestCommons([1, 5]);
+    // smallestCommons([5, 1]);
+    // smallestCommons([1, 13]);
+    // smallestCommons([23, 18]);
 
     </script>
 </body>
