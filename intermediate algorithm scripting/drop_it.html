@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+    function dropElements(arr, func) {
+        // Drop them elements.
+        var result = [];
+        for (var key in arr) {
+        	if (func(arr[key]) === true) {
+        		//开始截取
+        		return arr.slice(key);
+        	}
+        }
+        return result;
+    }
+
+
+    console.log(dropElements([1, 2, 3, 4], function(n) {return n >= 3;}));
+    console.log(dropElements([0, 1, 0, 1], function(n) {return n === 1;}));
+    console.log(dropElements([1, 2, 3], function(n) {return n > 0;}));
+    console.log(dropElements([1, 2, 3, 4], function(n) {return n > 5;}));
+    console.log(dropElements([1, 2, 3, 7, 4], function(n) {return n > 3;}));
+    console.log(dropElements([1, 2, 3, 9, 2], function(n) {return n > 2;}));
+
+
+
+
+    </script>
+</body>
+
+</html>
