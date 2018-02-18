@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+    function steamrollArray(arr) {
+    	var resultArray = [];
+    	var temp = [];
+        // I'm a steamroller, baby
+        for (var key in arr) {
+        	//console.log(arr[key]);
+        	if (Array.isArray(arr[key])) {
+        		temp = steamrollArray(arr[key]);
+        		for (var i = 0; i < temp.length; i++) {
+        			resultArray.push(temp[i]);
+        		}
+        		//console.log(13);
+        	}
+        	else {
+        		//console.log(123);
+        		resultArray.push(arr[key]);
+        	}
+        }
+        return resultArray;
+    }
+
+    console.log(steamrollArray([1, [2], [3, [[4]]]]));
+    //console.log(Array.isArray(123));
+
+
+    </script>
+</body>
+
+</html>
