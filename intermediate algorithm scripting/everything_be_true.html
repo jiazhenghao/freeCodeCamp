@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+    function truthCheck(collection, pre) {
+        for (var i = 0; i < collection.length; i++) {
+        	if (collection[i].hasOwnProperty(pre)) {
+        		if (collection[i][pre]) {
+        			continue;
+        		}
+        		else {
+        			return false;
+        		}
+        	}
+        	else {
+        		return false;
+        	}
+        }
+        return true;
+    }
+
+
+
+
+    var str = truthCheck([{ "user": "Tinky-Winky", "sex": "male" },
+            { "user": "Dipsy", "sex": "male" },
+            { "user": "Laa-Laa", "sex": "female" },
+            { "user": "Po", "sex": "female" }
+        ],
+        "sex"); //t
+    console.log(str);
+
+    var str1 = truthCheck([{ "user": "Tinky-Winky", "sex": "male" },
+            { "user": "Dipsy" },
+            { "user": "Laa-Laa", "sex": "female" },
+            { "user": "Po", "sex": "female" }
+        ],
+        "sex"); //f
+    console.log(str1);
+
+    var str2 = truthCheck([{ "user": "Tinky-Winky", "sex": "male", "age": 0 },
+            { "user": "Dipsy", "sex": "male", "age": 3 },
+            { "user": "Laa-Laa", "sex": "female", "age": 5 },
+            { "user": "Po", "sex": "female", "age": 4 }
+        ],
+        "age"); //f
+    console.log(str2);
+
+    var str3 = truthCheck([{ "name": "Pete", "onBoat": true },
+            { "name": "Repeat", "onBoat": true },
+            { "name": "FastFoward", "onBoat": null }
+        ],
+        "onBoat"); //f
+    console.log(str3);
+
+    var str4 = truthCheck([{ "name": "Pete", "onBoat": true },
+            { "name": "Repeat", "onBoat": true, "alias": "Repete" },
+            { "name": "FastFoward", "onBoat": true }
+        ],
+        "onBoat"); //t
+	console.log(str4);
+
+    var str5 = truthCheck([{ "single": "yes" }], "single"); //t
+    console.log(str5);
+
+    var str6 = truthCheck([{ "single": "" },
+            { "single": "double" }
+        ],
+        "single"); //f
+    console.log(str6);
+
+    var str7 = truthCheck([{ "single": "double" },
+            { "single": undefined }
+        ],
+        "single"); //f
+    console.log(str7);
+
+    var str8 = truthCheck([{ "single": "double" },
+            { "single": NaN }
+        ],
+        "single") //f
+    console.log(str8);
+    </script>
+</body>
+
+</html>
