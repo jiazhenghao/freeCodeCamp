@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+    function telephoneCheck(str) {
+        //var reg = /^(1?\s*)(\d{3}|\(\d{3}\))$/gi;
+        var reg = /^(1?\s*)(\d{3}|\(\d{3}\))(\d{3}|\s*\d{3}|\-?\d{3})(\d{4}|\s*\d{4}|\-?\d{4})$/gi;
+        // Good luck!
+        return reg.test(str);
+
+        //reg=/^((20|21|22|23|[0-1]\d)\:[0-5][0-9])(\:[0-5][0-9])?$/;
+        //判断日期类型是否为hh:mm:ss格式的类型 
+    }
+    // console.log(telephoneCheck("123"));//true
+    // console.log(telephoneCheck("1-(123)"));//false
+    // console.log(telephoneCheck("1 (123)"));//true
+    // console.log(telephoneCheck("1 (123"));//false
+    // console.log(telephoneCheck("1 123"));//true
+    // console.log(telephoneCheck("1 123)"));//false
+    // console.log(telephoneCheck("1   123"));//true
+    // console.log(telephoneCheck("123-456"));//true
+    // console.log(telephoneCheck("123- 456"));//false
+    // console.log(telephoneCheck("123456"));//true
+    // console.log(telephoneCheck("123   456"));//true
+
+
+
+    // console.log(telephoneCheck("555-555-5555") + " " + true);
+    // console.log(telephoneCheck("1 555-555-5555") + " " + true);
+    // console.log(telephoneCheck("1 (555) 555-5555") + " " + true);
+    // console.log(telephoneCheck("5555555555") + " " + true);
+    // console.log(telephoneCheck("555-555-5555") + " " + true);
+    // console.log(telephoneCheck("(555)555-5555") + " " + true);
+    // console.log(telephoneCheck("1(555)555-5555") + " " + true);
+    // console.log(telephoneCheck("555-5555") + " " + false);
+    // console.log(telephoneCheck("5555555") + " " + false);
+    // console.log(telephoneCheck("1 555)555-5555") + " " + false);
+    // console.log(telephoneCheck("1 456 789 4444") + " " + true);
+    console.log(telephoneCheck("123**&!!asdf#") + " " + false);
+    console.log(telephoneCheck("55555555") + " " + false);
+    console.log(telephoneCheck("(6505552368)") + " " + false);
+    console.log(telephoneCheck("2 (757) 622-7382") + " " + false);
+    console.log(telephoneCheck("0 (757) 622-7382") + " " + false);
+    console.log(telephoneCheck("-1 (757) 622-7382") + " " + false);
+    console.log(telephoneCheck("10 (757) 622-7382") + " " + false);
+    console.log(telephoneCheck("27576227382") + " " + false);
+    console.log(telephoneCheck("(275)76227382") + " " + false);
+    console.log(telephoneCheck("2(757)6227382") + " " + false);
+    console.log(telephoneCheck("2(757)622-7382") + " " + false);
+    console.log(telephoneCheck("555)-555-5555") + " " + false);
+    console.log(telephoneCheck("(555-555-5555") + " " + false);
+    console.log(telephoneCheck("(555)5(55?)-5555") + " " + false);
+
+
+    </script>
+</body>
+
+</html>
