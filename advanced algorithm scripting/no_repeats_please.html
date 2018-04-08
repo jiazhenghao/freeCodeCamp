@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+    function permAlone(str) {
+    	var arr = str.split("");
+    	var resultArr = [];
+
+    	perm(arr, [], resultArr);
+
+    	//console.log(resultArr);
+
+    	var n = 0;
+    	var addOrNot = true;
+    	for (var i = 0; i < resultArr.length; i++) {
+    		addOrNot = true;
+    		for (var j = 0; j < resultArr[i].length; j++) {
+    			if (resultArr[i][j] == resultArr[i][j+1]) {
+    				addOrNot = false;
+    				break;
+    			}
+    		}
+    		if (addOrNot) {
+    			n++;
+    		}
+    	}
+
+        return n;
+    }
+
+    function perm(arr, arrRes, resultArr) {
+    	if (arr.length > 1 ) {
+    		for (var i = 0; i < arr.length; i++) {
+    			//arr[i]
+    			var newArr = [];
+    			for (var j = 0; j < arr.length; j++) {
+    				if (j != i) {
+    					newArr.push(arr[j]);
+    				}
+    			}
+    			var clone = arrRes.slice(0);
+    			clone.push(arr[i]);
+    			//console.log(newArr);
+    			perm(newArr, clone, resultArr);
+    		}
+    	}
+    	else {
+    		arrRes.push(arr[0]);
+    		resultArr.push(arrRes);
+    	}
+    }
+
+
+    console.log(permAlone('aab'));
+    console.log(permAlone('aaa'));
+    console.log(permAlone('aabb'));
+    console.log(permAlone("abcdefa"));
+    console.log(permAlone("abfdefa"));
+    console.log(permAlone("zzzzzzzz"));
+    console.log(permAlone("a"));
+    console.log(permAlone("aaab"));
+    console.log(permAlone("aaabb"));
+    
+
+
+    </script>
+</body>
+
+</html>
