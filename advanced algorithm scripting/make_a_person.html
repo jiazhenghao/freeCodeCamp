@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+    var Person = function(firstAndLast) {
+        var arr = firstAndLast.split(" ");
+        var obj = {
+        	first: arr[0],
+        	last:  arr[1]
+        };
+
+        this.getFullName = function() {
+            return obj.first + " " + obj.last;
+        };
+
+        this.getFirstName = function() {
+            return obj.first;
+        };
+
+        this.getLastName = function() {
+            return obj.last;
+        };
+
+        this.setFirstName = function(first) {
+        	obj.first = first;
+        };
+
+        this.setLastName = function(last) {
+        	obj.last = last;
+        };
+
+        this.setFullName = function(fullName) {
+        	var tempArr = fullName.split(" ");
+        	obj.first = tempArr[0];
+        	obj.last = tempArr[1];
+        }
+
+    };
+
+    // function makeAdder(x) {
+    //     return function(y) {
+    //         return x + y;
+    //     };
+    // }
+    // var add5 = makeAdder(5);
+    // var add10 = makeAdder(10);
+    // console.log(add5(2)); // 7
+    // console.log(add10(2)); // 12
+
+    var bob = new Person('Bob Ross');
+
+    console.log(Object.keys(bob).length);
+
+    console.log(bob instanceof Person);
+    console.log(bob.firstName);
+    // console.log(bob.getFirstName());
+    // console.log(bob.getLastName());
+    // console.log(bob.getFullName());
+    // bob.setFirstName("Haskell");
+    // console.log(bob.getFullName());
+    // bob.setLastName("Curry");
+    // console.log(bob.getFullName());
+    // bob.setFullName("Haskell Curry");
+    // console.log(bob.getFirstName());
+    // console.log(bob.getLastName());
+    // bob.setLastName("Curry");
+    // console.log(bob.getFullName());
+    </script>
+</body>
+
+</html>
